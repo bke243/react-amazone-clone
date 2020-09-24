@@ -23,6 +23,10 @@
   * purchase product using the  universal stripe card validation for testing apis (alternate 42 all the places requiring card informations)
   * see products rating
   
+  <iframe
+  src="https://codepen.io/team/codepen/embed/preview/PNaGbb"
+  style="width:100%; height:300px;"
+></iframe>
   
   enjoy your application [Link to the App](https://e-clone-d0002.web.app/)
   
