@@ -1,9 +1,7 @@
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const stripe = require("stripe")(
-    "stripe secret key LOLLLLLLLLLLLLLLLLLLLLLLLLLL got you !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-);
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const app = express();
 

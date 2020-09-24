@@ -12,60 +12,76 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Orders from "./Components/Orders/Orders";
 
-const promise = loadStripe(
-  "pk_test_51HUgVrJD3wvNYjHDG95qbQVmyNbUboF5iZz5goORKFY6ydsM4YF0kfJ61fOoiXkjVoAh0Cz6J2faZi5kHZfbNjF100ViN55rcn"
-);
+const promise = loadStripe(process.env.REACT_APP_STRIPE_API);
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+    const [{}, dispatch] = useStateValue();
 
-  useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        //logOut
-        dispatch({
-          type: "SET_USER",
-          user: authUser,
+    useEffect(() => {
+        auth.onAuthStateChanged((authUser) => {
+            if (authUser) {
+                //logOut
+                dispatch({
+                    type: "SET_USER",
+                    user: authUser,
+                });
+            } else {
+                //loginOut
+                dispatch({
+                    type: "SET_USER",
+                    user: null,
+                });
+            }
         });
-      } else {
-        //loginOut
-        dispatch({
-          type: "SET_USER",
-          user: null,
-        });
-      }
-    });
-  }, []);
+    }, []);
 
-  return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/orders">
-            <Header />
-            <Orders />
-          </Route>{" "}
-          <Route path="/login">
-            <Login />
-          </Route>{" "}
-          <Route path="/checkout">
-            <Header />
-            <Checkout />
-          </Route>{" "}
-          <Route path="/payement">
-            <Header />
-            <Elements stripe={promise}>
-              <Payment />
-            </Elements>{" "}
-          </Route>{" "}
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>{" "}
-        </Switch>{" "}
-      </div>{" "}
-    </Router>
-  );
+    return ( <
+        Router >
+        <
+        div className = "App" >
+        <
+        Switch >
+        <
+        Route path = "/orders" >
+        <
+        Header / >
+        <
+        Orders / >
+        <
+        /Route>{" "} <
+        Route path = "/login" >
+        <
+        Login / >
+        <
+        /Route>{" "} <
+        Route path = "/checkout" >
+        <
+        Header / >
+        <
+        Checkout / >
+        <
+        /Route>{" "} <
+        Route path = "/payement" >
+        <
+        Header / >
+        <
+        Elements stripe = { promise } >
+        <
+        Payment / >
+        <
+        /Elements>{" "} <
+        /Route>{" "} <
+        Route path = "/" >
+        <
+        Header / >
+        <
+        Home / >
+        <
+        /Route>{" "} <
+        /Switch>{" "} <
+        /div>{" "} <
+        /Router>
+    );
 }
 
 export default App;
