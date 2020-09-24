@@ -46,7 +46,7 @@ export class Home extends Component {
                         />
                         
                     </div>
-                    <div className="home__ow">
+                    <div className="home__row">
                         <Product title='Samsung Tv '
                         id={6544652}
                         price={800}  

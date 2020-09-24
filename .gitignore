@@ -13,6 +13,8 @@
 
 
 firebase.js
+.firebase*
+firebase.json
 
 # misc
 .DS_Store
