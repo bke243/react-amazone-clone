@@ -1,2 +1,2 @@
 # Mini amazone Clone App
-# [peterbadibake.com](Link to the project)
+# (Link to the project)[peterbadibake.com]
