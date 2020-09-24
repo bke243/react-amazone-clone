@@ -25,7 +25,7 @@
   
  # Demo
   
- ![Farmers Market Finder Demo](demo/reactamazoneclone2.gif)
+ ![](Demo/reactamazoneclone2.gif)
 
 
   
